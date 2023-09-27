@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // cart slice
 // this cart represent place where items for an order is stored
 // this is different than a product, cart items are
+// try to resolve this but do not stop here
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
@@ -60,6 +61,7 @@ const cartSlice = createSlice({
             state.cart = [];
             state.totalQuantity = 0;
         }, // set to an empty state 
+
         increaseItemQuantity: (state, action) => {
             const { payload } = action;
             // update a element state, value
@@ -70,16 +72,16 @@ const cartSlice = createSlice({
         decreaseItemQuantity: (state, action) => {
             // something is wrong here
             const { payload } = action;
-            console.log('Decreasing item ', payload)
             state.cart.map((e, idx, arr) => {
+                // something is wrong
+                // splice receives an id not the whole element
                return e._id === payload ? 
                       (e.quantity === 1) ? 
-                      (state.cart.splice(e, 1), state.totalQuantity--)
+                      (state.cart.splice(idx, 1), state.totalQuantity--)
                     : (e.quantity--, state.totalQuantity--)
                     : e;
             } )
             
-            console.log('State cart id decrease ', state.cart);
         },
         // deal with this but also we have to specify some things because we will get lost
         // when we add new element to the array, the total price restarts to value of last added element

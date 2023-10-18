@@ -3,21 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 // cart slice
 // this cart represent place where items for an order is stored
 // this is different than a product, cart items are
-// try to resolve this but do not stop here
+
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        cart: [], // {_id, quantity}
+        cart: [], 
         totalQuantity: 0,
         isOpen: false,
         totalPrice: 0
     },
-    // object that contains functions
-    reducers: { // (state, action)
+    reducers: { 
         
-        getAllItems: (state, action) => { // action contains payload
+        getAllItems: (state, action) => { 
             return state.cart.map((item) => ({...item}) );
-        }, // get all items from cart
+        }, 
 
         addItem: (state, action) => {
             // product {_id, quantity}
@@ -90,7 +89,6 @@ const cartSlice = createSlice({
             } )
             
         },
-        // deal with this but also we have to specify some things because we will get lost
         // when we add new element to the array, the total price restarts to value of last added element
         calculateTotalAmount: (state, action) => {
             state.totalPrice = state.cart.reduce((acc, currentValue, idx, arr) => {

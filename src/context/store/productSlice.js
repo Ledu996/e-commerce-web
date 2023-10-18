@@ -41,7 +41,6 @@ const productSlice = createSlice({
 
         },
         getProductsByPrice: (state, action) => {
-            console.log('Fired off');
             const { payload: productPrice } = action;
             state.products = state.products.filter(({price}) => price <= productPrice)
         },
@@ -69,7 +68,3 @@ const productSlice = createSlice({
 export const productActions = productSlice.actions;
 export default productSlice;
 
-// try to do something new, watch more videos about redux
-// finish this stuff with products 
-// se to figure out some stuff on backend and practice more
-// Relax and take care, tchau

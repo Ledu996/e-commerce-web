@@ -1,0 +1,25 @@
+.product__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 2px;
+    border-bottom: 2px #ccc solid;
+    width: 100%;
+}
+
+.user__support__functions {
+    display: flex;
+    justify-content: center;
+    flex-grow: 4;
+    gap: 45px;
+    padding: 5px;
+}
+
+.user__nav__functions {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: stretch;
+    gap: 10px;
+}

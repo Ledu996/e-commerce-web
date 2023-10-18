@@ -1,0 +1,33 @@
+.users__header {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    background-color: #ffff;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: fantasy;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50px;
+}
+
+.nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.nav__item {
+    padding: 12px;
+}
+
+.user__options_nav {
+    display: flex;
+    padding: 20px;
+}

@@ -1,0 +1,30 @@
+.notification__bell {
+    margin-top: 2px;
+    padding: 5px 9px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    position: relative;
+    background-color: #f7f6f6;
+    cursor: pointer;
+}
+
+.notification__bell span {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    border: 1px #fff solid;
+    background-color: #fa0c0c;
+    color: #fff;
+    border-radius: 20px;
+    padding: 1px 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.notification__bell img {
+    width: 100%;
+}
+
+.notification__bell:active {
+    transform: translateY(3px);
+
+}

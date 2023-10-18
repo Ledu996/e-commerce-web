@@ -18,6 +18,7 @@ const cartSlice = createSlice({
         getAllItems: (state, action) => { // action contains payload
             return state.cart.map((item) => ({...item}) );
         }, // get all items from cart
+
         addItem: (state, action) => {
             // product {_id, quantity}
             const { payload } = action;
@@ -41,6 +42,7 @@ const cartSlice = createSlice({
                 state.totalQuantity++;
             }
         },
+
         updateItem: (state, action) => {
             const { payload } = action; // get the update name too
             state.cart.map((item) => {
@@ -49,18 +51,23 @@ const cartSlice = createSlice({
         },
 
         changeStatus: (state, action) => {
+            console.log('FIRED EVENT')
             state.isOpen = !state.isOpen;
+            console.log('Is open', state.isOpen);
         },
 
         deleteItem: (state, action) => {
             // can do it with filter, also with splice
-            const {payload: { _id } } = action;
+            const { payload: { _id } } = action;
+            const element = state.cart.findIndex(el => el._id === _id);
+            
+            state.totalQuantity = state.totalQuantity - state.cart[element].quantity;
             state.cart = state.cart.filter((item) => _id !== item._id);
         },
         clearAll: (state, action) => {
             state.cart = [];
             state.totalQuantity = 0;
-        }, // set to an empty state 
+        },
 
         increaseItemQuantity: (state, action) => {
             const { payload } = action;

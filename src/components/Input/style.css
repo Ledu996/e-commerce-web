@@ -1,0 +1,17 @@
+.search__wrapper {
+    position: relative;
+    flex-grow: 6;
+}
+
+.search__wrapper input {
+    padding: 10px 75px;
+    border-radius: 10px;
+}
+
+.search__wrapper img {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    border-right: 2px solid #ccc;
+    padding: 3px;
+}

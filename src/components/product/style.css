@@ -1,0 +1,22 @@
+.product__list {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.product__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*flex: 2 1 auto;*/
+    /*min-width: 10%;*/
+    max-width: 30%;
+}
+
+.product__image {
+    width: 150px;
+}

@@ -7,10 +7,14 @@
 // #Defining a store using react toolkit
 import cartSlice from "./cartSlice";
 import productSlice from "./productSlice";
+import paginationSlice from "./paginationSlice";
+import orderSlice from "./orderSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 
 export const store = configureStore({reducer: {
     cartState: cartSlice.reducer,
-    productState: productSlice.reducer
+    productState: productSlice.reducer,
+    paginationSlice: paginationSlice.reducer,
+    orderSlice: orderSlice.reducer,
 }});

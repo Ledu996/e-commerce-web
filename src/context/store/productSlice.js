@@ -5,11 +5,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // see calculation for product individually
+// lets do some kind of interface
 const productSlice = createSlice({
     name: "product",
     initialState: {
         products: [],
-        name: ''
+        name: '',
+        totalQuantity: 0,
     },
     reducers: {
         setName: (state, action) => {
@@ -23,26 +25,40 @@ const productSlice = createSlice({
             console.log(payload);
             state.products = [...payload];
         },
+        setTotalQuantity: (state, action) => {
+            const { payload: numberOfProducts } = action;
+            state.totalQuantity = numberOfProducts;
+        },
         getProductsByName: (state, action) => { // payload a string
             const { payload: productName } = action;
-            console.log('Product name ', state.name);
             // does not have to be one liner always it will come one day
+
             const filteredArray =  state.products.filter((item, idx, arr) =>
                 item.name.toLowerCase().includes(state.name.trim().toLowerCase()) 
             ); // but if the condition does not match it will give us an empty array
-            console.log('Filtered products ', state.products.length);
+
             state.products = !filteredArray.length ? state.products : filteredArray;
 
         },
         getProductsByPrice: (state, action) => {
+            console.log('Fired off');
             const { payload: productPrice } = action;
             state.products = state.products.filter(({price}) => price <= productPrice)
-            console.log('Products by price ', state.products);
         },
+        getProductsByAscendingOrder: (state, action) => {
+            state.products = state.products.sort((a, b) => a.price - b.price);
+        },
+
         getProductsByCategory: (state, action) => {
             const {payload: productCategory} = action;
             state.products = state.products.filter(({category}) => category === productCategory)
         },
+        getTopSoldProducts : (state, action) => {
+            state.products = state.products
+                    .sort((a, b) => b.numberOfSales - a.numberOfSales)
+                    .slice(0, 5)
+        },
+        // Admin stuff
         createProduct: (state, action) => {},
         updateProduct: (state, action) => {},
         getProductById: (state, action) => {},

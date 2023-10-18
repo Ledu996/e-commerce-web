@@ -27,7 +27,7 @@ export async function fetchData ({path, method, body}) {
       body: JSON.stringify(body),
     })
     const resData = await response.json();
-    console.log(response, resData);
+    console.log('Response ', response, resData);
     // message from the backend in there, how to import (checked)
     if(!response.ok) {
         throw new Error(`${resData.message}`)

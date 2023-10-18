@@ -1,0 +1,31 @@
+.home__header {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    color: yellowgreen;
+    text-transform: uppercase;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: fantasy;
+}
+
+.nav__items {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.join {
+    border-color: yellowgreen;
+    border-style: solid;
+    border-width: 2px;
+    transition: background-color 0.7s, color 0.7s;
+}
+
+.join:hover {
+    background-color: yellowgreen;
+    color: #fff;
+}

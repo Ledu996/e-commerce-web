@@ -1,0 +1,31 @@
+.shopping__cart {
+    margin-top: 2px;
+    padding: 3px 9px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    position: relative;
+    background-color: #f7f6f6;
+    cursor: pointer;
+    vertical-align: auto;
+}
+
+
+.shopping__cart img {
+    width: 100%;
+}
+
+
+.cart__quantity_wrapper {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 60%;
+    font-family: auto;
+    font-size: 15px;
+}
+
+.shopping__cart:active {
+    transform: translateY(3px);
+}
